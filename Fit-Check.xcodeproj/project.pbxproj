@@ -31,6 +31,7 @@
 		9E2F13FD2CAE0FBB00EB97D2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2F13FC2CAE0FBB00EB97D2 /* FirebaseStorage */; };
 		9E2F13FF2CAE0FBB00EB97D2 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2F13FE2CAE0FBB00EB97D2 /* FirebaseStorageCombine-Community */; };
 		9E2F14012CAE0FBB00EB97D2 /* FirebaseVertexAI-Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 9E2F14002CAE0FBB00EB97D2 /* FirebaseVertexAI-Preview */; };
+		9EDFB4472CAEE54A00F8E172 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9EDFB4462CAEE54A00F8E172 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		9E2F13A02CAE0D0B00EB97D2 /* Fit-Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fit-Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E2F13B02CAE0D0C00EB97D2 /* Fit-CheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fit-CheckTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E2F13BA2CAE0D0C00EB97D2 /* Fit-CheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fit-CheckUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EDFB4462CAEE54A00F8E172 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -126,6 +128,7 @@
 		9E2F13972CAE0D0B00EB97D2 = {
 			isa = PBXGroup;
 			children = (
+				9EDFB4462CAEE54A00F8E172 /* .gitignore */,
 				9E2F13A22CAE0D0B00EB97D2 /* Fit-Check */,
 				9E2F13B32CAE0D0C00EB97D2 /* Fit-CheckTests */,
 				9E2F13BD2CAE0D0C00EB97D2 /* Fit-CheckUITests */,
@@ -290,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EDFB4472CAEE54A00F8E172 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
