@@ -18,15 +18,15 @@ class TestImageViewModel: ObservableObject {
     private let storage = Storage.storage()
     
     // Upload image to Firebase Storage
-    func uploadImage(_ image: UIImage) {
+    func uploadImage(_ image: UIImage) -> String? {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
-            return
+            return nil
         }
         
         isUploading = true
-        
+        let pathName: String = "\(UUID().uuidString).jpg"
         // Create a reference to Firebase Storage
-        let storageRef = storage.reference().child("images/\(UUID().uuidString).jpg")
+        let storageRef = storage.reference().child(pathName)
         
         // Upload the image data
         storageRef.putData(imageData, metadata: nil) { metadata, error in
@@ -38,28 +38,29 @@ class TestImageViewModel: ObservableObject {
                 print("Image uploaded successfully!")
             }
         }
+        return pathName
     }
     
     func downloadImage(from path: String) {
-           isDownloading = true
-
-           // Create a reference to Firebase Storage
-           let storageRef = storage.reference().child(path)
-
-           // Download the image data
-           storageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-               self.isDownloading = false
-
-               if let error = error {
-                   print("Error downloading image: \(error.localizedDescription)")
-                   return
-               }
-
-               if let data = data, let uiImage = UIImage(data: data) {
-                   self.image = uiImage
-               } else {
-                   print("Unable to load image")
-               }
-           }
-       }
+        isDownloading = true
+        
+        // Create a reference to Firebase Storage
+        let storageRef = storage.reference().child(path)
+        
+        // Download the image data
+        storageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+            self.isDownloading = false
+            
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+                return
+            }
+            
+            if let data = data, let uiImage = UIImage(data: data) {
+                self.image = uiImage
+            } else {
+                print("Unable to load image")
+            }
+        }
+    }
 }
